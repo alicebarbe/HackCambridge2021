@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   public form: FormGroup;
   public geolocationError = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     const minRadius = 0.5;
     const maxRadius = 20;
     this.form = this.fb.group({
@@ -54,6 +55,10 @@ export class HomeComponent implements OnInit {
     } else {
       this.geolocationError = true
     }
+  }
+
+  goToRouteView() {
+    this.router.navigate(['/routeview'])
   }
 
 
