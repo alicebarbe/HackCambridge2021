@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
   public form: FormGroup;
+  public geolocationError = false;
 
   constructor(private fb: FormBuilder) {
     const minRadius = 0.5;
@@ -35,6 +36,26 @@ export class HomeComponent implements OnInit {
   get controls() {
     return this.form.controls;
   }
+
+  public getMyLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          this.form.controls['location'].setValue(pos);
+          this.form.controls['location'].setErrors({'incorrect': true})
+        },
+        () => this.geolocationError = true
+      );
+    } else {
+      this.geolocationError = true
+    }
+  }
+
 
   ngOnInit(): void {
   }
