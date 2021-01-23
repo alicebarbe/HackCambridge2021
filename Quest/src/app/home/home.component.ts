@@ -27,8 +27,13 @@ export class HomeComponent implements OnInit {
   }
 
   public submit(f: FormGroup) {
-    console.log(this.form.get('location'));
-    console.log(this.form.get('radius'));
+    this.form.markAllAsTouched();
+    console.log(this.form.controls['location'].value);
+    console.log(this.form.controls['radius'].value);
+  }
+
+  get controls() {
+    return this.form.controls;
   }
 
   ngOnInit(): void {

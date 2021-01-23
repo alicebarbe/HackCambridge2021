@@ -13,7 +13,7 @@
               <div>
                 <input style="width: 90%;" type="text" placeholder="Enter a valid UK postcode" [formControlName]="'location'">
               </div>
-              <span style="font-weight: 700;">or</span>
+              <span style="font-weight: 700; font-size: large;">or</span>
               <div style="padding-top: 5px; padding-bottom: 20px;">
                 <button style="color: white; font-size: medium;" class="btn">Get my location</button>
               </div>
@@ -23,8 +23,11 @@
               <div>
                 <input style="width: 90%;" type="text" placeholder="Enter a number between 0.5 and 20" [formControlName]="'radius'">
               </div>
+              <div *ngIf="((controls.location.touched) || (controls.radius.touched)) && ((controls.location.errors) || (controls.radius.errors))">
+                <p style="font-weight: bold; color: brown; padding-top: 5px;">Invalid data submitted</p>
+              </div>
               <div style="padding-top: 20px;">
-                <button style="color: white; font-size: larger;" class="btn" type="submit">Plan my itinerary</button>
+                <button style="color: white; font-size: larger;" class="btn-main" type="submit">Plan my itinerary</button>
               </div>
             </form>
           </div>
