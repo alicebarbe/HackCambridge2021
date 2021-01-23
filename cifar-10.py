@@ -27,13 +27,14 @@ output = args["save"]
 cv2.imshow('Input Image', image)
 
 #you must press to continue
-cv2.waitKey(0)
+cv2.waitKey(1)
 
 # manipulate the image
 bbox, label, conf = cv.detect_common_objects(image) 
 output_image = draw_bbox(image, bbox, label, conf)
 
-# saving_image(output_image, output, "detection.jpg")
+saving_image(np.flip(output_image, axis=2), output, "detection.jpg")
 plt.imshow(np.flip(output_image, axis=2))
 plt.show()
+exit()
 
