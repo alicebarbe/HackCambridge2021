@@ -122,9 +122,16 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  # Checkpoint
  
+ ![epoch2.png](mindSpore/img/epoch2image.png)
+ 
  A list of checkpoints can be found below:
  
  
- - [train_resnet50_cifar10_1_1254.ckpt](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
+ - [train_resnet50_cifar10_2_1254.ckpt](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
   
  - [train_resnet50_cifar10_2-1_80.ckpt](https://www.dropbox.com/s/w82pnvzwafehmra/train_resnet_cifar10_2-1_80.ckpt?dl=0)
+ 
+ 
+ # Note
+ 
+ We initialy chose `batch_num=128` and `keep_checkpoint_max=38` we suggest to use the configuration suggested on the documentation (i.e. `batch_num=5` and `keep_checkpoint_max=10`)
