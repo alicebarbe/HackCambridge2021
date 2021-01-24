@@ -20,38 +20,21 @@ app = Flask(__name__)
 
 start_time = time.time()
 
-# Model
-class InputForm(Form):
-    lat = FloatField(
-        label='latitude', default=51.466767,
-        validators=[validators.InputRequired()])
-    lon = FloatField(
-        label='longitude', default=-0.070416,
-        validators=[validators.InputRequired()])
-    radius = FloatField(
-        label='radius', default=2.0,
-        validators=[validators.InputRequired()])
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
-    form = InputForm(request.form)
-    if request.method == 'POST' and form.validate():
-        lat = form.lat.data
-        lon = form.lon.data
-        radius = form.radius.data
+        lat = request.args.get('lat')
+        lon = request.args.get('lon')
+        radius = request.args.get('radius')
         
-        num_select = 3
+        num_select = 8
         month = f"{datetime.datetime.now().month:02d}"
         results = get_plant_list(lat, lon, radius, month, num_select)
         plant_df = get_plant_df(results)
-        return render_template('view_output.html',  tables=[plant_df.to_html(classes='data')], titles=plant_df.columns.values)
-        #return render_template("view_found_plants.html",
-        #                       total_plant_count=len(all_results), plant_count=len(results))
-    else:
-        return render_template("view_input.html", form=form)
+        return {'plants': plant_df.to_dict('records')}
 
         print("--- %s seconds ---" % (time.time() - start_time))
-        
+
 
 def get_plant_list(lat, lon, radius, month, num_select):
     url = f"https://records.nbnatlas.org/occurrences/search?q=*%3A*&fq=(geospatial_kosher%3Atrue%20AND%20-occurrence_status%3Aabsent)&fq=(species_group%3A\"FloweringPlants\"%20OR%20species_group%3A\"Plants\")&lat={lat}&lon={lon}&radius={radius}&fq=month%3A\"{month}\"&max=100"
@@ -98,19 +81,4 @@ def get_plant_df(results):
     return plant_df
 
 if __name__ == '__main__':
-    lat = 51.466767
-    lon = -0.070416
-    radius = 2.0
-    num_select = 10
-    month = f"{datetime.datetime.now().month:02d}"
-    results = get_plant_list(lat, lon, radius, num_select)
-    print("--- %s seconds ---" % (time.time() - start_time))
-
-    data_thread = executor.submit(get_plant_df, results)
-    plant_df = data_thread.result()
-    print(plant_df)
-        
-if __name__ == '__main__':
     app.run(debug=True)
-
-#print("--- %s seconds ---" % (time.time() - start_time))
