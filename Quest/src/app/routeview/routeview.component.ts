@@ -21,7 +21,7 @@ export class RouteviewComponent implements AfterViewInit {
     zoom: 15
   }
 
-  marker = new google.maps.Marker({
+  origin = new google.maps.Marker({
     position: this.coordinates,
     map: this.map,
   });
@@ -33,7 +33,20 @@ export class RouteviewComponent implements AfterViewInit {
   mapInitializer() {
     this.map = new google.maps.Map(this.gmap?.nativeElement, 
     this.mapOptions);
-    this.marker.setMap(this.map);
+    this.origin.setMap(this.map);
+
+    const plants = this.service.getPlantCollection()
+    plants.forEach(plant => {
+      let splitCoords = plant.split('/');
+      let lat = parseInt(splitCoords[0]);
+      let lon = parseInt(splitCoords[1]);
+      let coordinates = new google.maps.LatLng(lat, lon)
+      new google.maps.Marker({
+        position: (coordinates),
+        map: this.map
+      })
+    })
+
   }
 
 }

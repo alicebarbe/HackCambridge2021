@@ -23,7 +23,7 @@
                 <label style="font-size: 1.5em; text-align: center; width: max-content;">How far do you want to go (in kilometres)?</label>
               </div>
               <div>
-                <input style="width: 90%;" type="text" placeholder="Enter a number between 0.5 and 20" [formControlName]="'radius'">
+                <input style="width: 90%;" type="text" placeholder="Enter a number between 1 and 20" [formControlName]="'radius'">
               </div>
               <div *ngIf="((controls.location.touched) || (controls.radius.touched)) && ((controls.location.errors) || (controls.radius.errors))">
                 <p style="font-weight: bold; color: brown; padding-top: 5px;">Invalid data submitted</p>
