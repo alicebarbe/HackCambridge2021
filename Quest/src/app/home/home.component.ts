@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,11 @@ export class HomeComponent implements OnInit {
   public form: FormGroup;
   public geolocationError = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private service: CommonService
+    ) {
     const minRadius = 0.5;
     const maxRadius = 20;
     this.form = this.fb.group({

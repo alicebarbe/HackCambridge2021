@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { RouteviewComponent } from './routeview/routeview.component';
   imports: [
     RouterModule,
     BrowserModule,
+    HttpClient,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
