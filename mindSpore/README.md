@@ -21,7 +21,22 @@ CIFAR-10
    └─cifar-10-verify-bin
 
 ```
-Download the dataset from [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html). Once downloaded save your file such that your CIFAR-10 folder will look like the following
+Download the dataset from [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html). 
+
+If you are using linux  simply use the command:
+
+```
+wget https://www.cs.toronto.edu/~kriz/cifar-10-binary.tar.gz
+```
+
+and 
+
+
+```
+tar -zvxf cifar-10-binary.tar.gz
+```
+
+Once downloaded save your file such that your CIFAR-10 folder will look like the following
 
 
 ```
