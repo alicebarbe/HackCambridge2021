@@ -64,7 +64,17 @@ export class HomeComponent implements OnInit {
             lng: position.coords.longitude
           };
 
-          this.form.controls['location'].setValue(pos);
+		  console.log( `Current Latitude is ${pos.lat}, longitude is ${pos.lng}`);
+		  
+		  //const a = fetch(`https://api.postcodes.io/postcodes?lon=${pos.lng}&lat=${pos.lat}`).then(function(response) {
+		//	return response.json();
+		// }).then(function(data) {
+		//	return data.result[0].postcode;
+		//  });
+		//  console.log(a);
+
+        //  this.form.controls['location'].setValue(Object.values(a)[1]);
+		  this.form.controls['location'].setValue(`${pos.lng}, ${pos.lat}`)
           this.form.controls['location'].setErrors({'incorrect': true})
         },
         () => this.geolocationError = true

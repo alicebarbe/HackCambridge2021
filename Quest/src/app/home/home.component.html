@@ -5,7 +5,7 @@
         <div class="col-md-5 mx-auto">
           <div style="text-align: center">
             <img src="../../assets/favicon.ico">
-            <h1 class="title">Quest</h1>
+            <h1 class="title">Flora Quest</h1>
             <form [formGroup]="form" (ngSubmit)="submit(form)">
               <div>
                 <label style="font-size: 1.5em;">Where are you?</label>
@@ -17,7 +17,7 @@
               <br>
               <p style="font-weight: bold; color: brown; padding-top: 5px;" *ngIf="geolocationError">Geolocation has failed</p>
               <div style="padding-top: 5px; padding-bottom: 20px;">
-                <button style="color: white; font-size: medium;" class="btn">Get my location</button>
+                <button style="color: white; font-size: medium;" class="btn" type="button" (click)="getMyLocation()">Get my location</button>
               </div>
               <div>
                 <label style="font-size: 1.5em; text-align: center; width: max-content;">How far do you want to go (in kilometres)?</label>
