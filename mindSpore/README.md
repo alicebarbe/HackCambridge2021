@@ -133,7 +133,7 @@ For the result at submission tim 5pm please look at the resultfolder.
  
  # Checkpoint
  
- ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/epoch2image.png)
+ ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/trainingpng)
  
  A list of checkpoints can be found below:
  
