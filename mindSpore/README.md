@@ -16,7 +16,9 @@ Place your test and training files within the `CIFAR-10` folder, the path has be
 
 ```
 CIFAR-10
-   
+   ├─cifar-10-batches-bin
+   │
+   └─cifar-10-verify-bin
 
 ```
 
