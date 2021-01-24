@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CommonService {
 
-  private baseUrl = 'localhost:5000';
+  private baseUrl = 'http://localhost:5000/';
   //private params = new HttpParams();
 
   constructor(private httpClient: HttpClient) { }
