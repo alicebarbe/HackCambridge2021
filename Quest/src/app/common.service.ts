@@ -13,6 +13,10 @@ export class CommonService {
 
   public getPlants(lat: string, lon: string, radius: string) {
 
-    this.httpClient.get(this.baseUrl + '?lat=' + lat + '&lon=' + lon + '&radius=' + radius);
+    this.httpClient.get(this.baseUrl + '?lat=' + lat + '&lon=' + lon + '&radius=' + radius)
+      .subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      )
   }
 }
