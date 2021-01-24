@@ -90,7 +90,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  ```
  python trainCIFAR_10.py --device_target=CPU  --pre_trained=[CHECKPOINT_PATH](optional)
  ```
- The checkpoint given at 16:00 is `MindSpore_Resnet50_cifar10.ckpt` which is also the default for the training script
+ The checkpoint given at 16:00 is `MindSpore_Resnet50_cifar10.ckpt` which is also the default for the evaluation script
  The configuration requirments are the following:
  ```
      "class_num": 10,
