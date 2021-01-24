@@ -75,6 +75,8 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  ```
  python trainCIFAR10.py --device_target=CPU  --pre_trained=[CHECKPOINT_PATH](optional)
  ```
+ 
+ ![training your model](./img/image.png)
 
  ## Evaluation
 
