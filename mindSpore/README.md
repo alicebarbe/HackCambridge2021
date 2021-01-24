@@ -122,6 +122,9 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  ## Accuracy
  
+ During the hackathon we have trained the model up to 2 epoch prior submission, the accuracy of this model reached ~50%. 
+ Ideally one would train the model for much longer The model has only been through 3% of the training required.
+ 
  ============= Accuracy:{'Accuracy': 0.4940905448717949} ==============
  
  ![Accuracy](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/accuracy.png) 
