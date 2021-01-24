@@ -21,7 +21,33 @@ CIFAR-10
    └─cifar-10-verify-bin
 
 ```
+Download the dataset from [CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html). Once downloaded your CIFAR-10 folder will look like the following
 
+
+```
+CIFAR-10
+   ├─cifar-10-batches-bin
+   │            │  
+   │            │─batches.meta
+   │            │─ data_batch_1.bin
+   │            │─ data_batch_2.bin
+   │            │─ data_batch_3.bin
+   │            │─ data_batch_4.bin
+   │            │─ data_batch_5.bin
+   │
+   │
+   └─cifar-10-verify-bin
+             │  
+             │─batches.meta
+             │─ data_batch_1.bin
+             │─ data_batch_2.bin
+             │─ data_batch_3.bin
+             │─ data_batch_4.bin
+             │─ data_batch_5.bin
+    
+   
+   
+```
 ### Create a Virtual Env for Python 3.7 with virtualenv
 
 - Install `pyenv`
