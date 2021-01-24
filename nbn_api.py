@@ -97,14 +97,6 @@ def get_plant_df(results):
         plantNum += 1
     return plant_df
 
-def print_time():
-    i=0
-    while i < 10: 
-       print(time.time() - start_time)
-       time.sleep(1)
-       i+=1
-
-
 if __name__ == '__main__':
     lat = 51.466767
     lon = -0.070416
@@ -114,11 +106,9 @@ if __name__ == '__main__':
     results = get_plant_list(lat, lon, radius, num_select)
     print("--- %s seconds ---" % (time.time() - start_time))
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        data_thread = executor.submit(get_plant_df, results)
-        print_thread = executor.submit(print_time)
-        plant_df = data_thread.result()
-        print(plant_df)
+    data_thread = executor.submit(get_plant_df, results)
+    plant_df = data_thread.result()
+    print(plant_df)
         
 if __name__ == '__main__':
     app.run(debug=True)
