@@ -125,4 +125,6 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  A list of checkpoints can be found below:
  
  
- [MindSpore_ResNet50_cifar10_1254](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
+ - [train_resnet50_cifar10_1_1254.ckpt](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
+  
+ - [train_resnet50_cifar10_2-1_80.ckpt](https://www.dropbox.com/s/w82pnvzwafehmra/train_resnet_cifar10_2-1_80.ckpt?dl=0)
