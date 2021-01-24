@@ -1,5 +1,5 @@
 # ResNet50
-This folder contains the a ResNet model used for CIFAR-10 Image Classification.
+This folder contains a ResNet model for Image Classification using CIFAR-10 dataset. 
 
 
 
@@ -23,6 +23,7 @@ now you may follow the instruction to actuvate your virtual environment.
 ### Install MindSpore
 
 To install MindSpore, follow the installation guide here(https://www.mindspore.cn/install/en). Make sure to select your machine specification to obtain the correct command. 
+ 
  # Usage
 
  ## Training
