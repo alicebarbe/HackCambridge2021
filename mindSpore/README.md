@@ -88,7 +88,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  
  ```
- python trainCIFAR10.py --device_target=CPU  --pre_trained=[CHECKPOINT_PATH](optional)
+ python trainCIFAR_10.py --device_target=CPU  --pre_trained=[CHECKPOINT_PATH](optional)
  ```
  The configuration requirments are the following:
  ```
@@ -117,5 +117,5 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
 
 
  ```
- python evalCIFAR10.py --device_target=CPU  --checkpoint_path=[CHECKPOINT_PATH]
+ python evalCIFAR_10.py --device_target=CPU  --checkpoint_path=[CHECKPOINT_PATH]
  ```
