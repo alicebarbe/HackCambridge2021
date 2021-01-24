@@ -122,7 +122,9 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  ## Accuracy
  
- ![Accuracy]() 
+ ============= Accuracy:{'Accuracy': 0.4940905448717949} ==============
+ 
+ ![Accuracy](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/accuracy.png) 
  
  # Checkpoint
  
