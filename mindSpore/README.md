@@ -44,6 +44,8 @@ CIFAR-10
              │─ data_batch_3.bin
              │─ data_batch_4.bin
              │─ data_batch_5.bin
+             │─ test_batch.bin
+             
     
    
    
