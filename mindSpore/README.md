@@ -90,6 +90,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  ```
  python trainCIFAR_10.py --device_target=CPU  --pre_trained=[CHECKPOINT_PATH](optional)
  ```
+ The checkpoint given at 16:00 is `MindSpore_Resnet50_cifar10.ckpt` which is also the default for the training script
  The configuration requirments are the following:
  ```
      "class_num": 10,
@@ -122,13 +123,13 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  ## Accuracy 24/01/2021 morning
  
- During the hackathon we have trained the model up to 2 epoch without starting from a checkpoint and the accuracy was ~ 50%
+ During the hackathon we have trained the model up to 2 epoch without starting from a checkpoint and the accuracy was ~ 0%
  
- ============= Accuracy:{'Accuracy': 0.4940905448717949} ==============
+ ============= Accuracy:{'Accuracy':  } ==============
  
 For the result at submission tim 5pm please look at the resultfolder.
  
- ![Accuracy](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/accuracy.png) 
+ ![Accuracy](   ) 
  
  # Checkpoint
  
@@ -137,11 +138,11 @@ For the result at submission tim 5pm please look at the resultfolder.
  A list of checkpoints can be found below:
  
  
- - [train_resnet50_cifar10_2_1254.ckpt](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
+ - [train_resnet_cifar10_1-1_15.ckpt](https://www.dropbox.com/s/vdlkw9rmb3xsd4j/train_resnet_cifar10_1-1_15.ckpt?dl=0) with loss 0.38 
   
- - [train_resnet50_cifar10_2-1_80.ckpt](https://www.dropbox.com/s/w82pnvzwafehmra/train_resnet_cifar10_2-1_80.ckpt?dl=0)
+ - [train_resnet_cifar10_1-1_25.ckpt](https://www.dropbox.com/s/f95nulayfevsc1s/train_resnet_cifar10_1-1_25.ckpt?dl=0)  with loss ~ 0.28 
  
- other checkpoints can be found [here](https://www.dropbox.com/sh/8e18q8akyr2mftv/AAB5YfS4HK3qGkRAcefJSoZUa?dl=0)
+ other checkpoints can be found [here](https://www.dropbox.com/sh/3ds1qx7jgo4hpso/AABfkX7C8xLiCoeIv96YKFK2a?dl=0)
  
  
  
