@@ -23,7 +23,7 @@ export class CommonService {
           for (let i = 0; i < Object.keys(base).length; i++) {
             let lat = (base[i]).lat;
             let lon = (base[i]).long;
-            this.plantCollection.push('lat' + '/' + 'lon')
+            this.plantCollection.push(lat + '/' + lon)
           }
           console.log(this.plantCollection)
         },
