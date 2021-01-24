@@ -56,7 +56,7 @@ def get_plant_list(lat, lon, radius, month, num_select):
 def get_plant_df(results):
     url_base = r"https://records.nbnatlas.org"
     plantNum = 1
-    plant_df = pd.DataFrame(columns=['species', 'commonName', 'lat', 'long', 'loc_remarks'])
+    plant_df = pd.DataFrame(columns=['species', 'commonName', 'lat', 'long', 'loc_remarks', 'image'])
     for plant in results:
         print(f"processing plant {plantNum} of {len(results)}")
         plant_soup = BeautifulSoup(requests.get(url_base + plant).text,'html.parser')
@@ -82,7 +82,13 @@ def get_plant_df(results):
         plantNum += 1
     
     # get picture from wikipedia and add to datafrme
-    plant_df['image'] = plant_df['species'].map(lambda x: wikipedia.page(x).images[0])
+    for index, row in plant_df.iterrows():
+        species = plant_df.loc[index, 'species']
+        try:
+            plant_df.loc[index, 'image', ] = wikipedia.page(species).images[0]
+        except:
+            plant_df.loc[index, 'image', ] = ''
+        #plant_df['image'] = plant_df['species'].map(lambda x: wikipedia.page(x).images[0])
         
     return plant_df
 

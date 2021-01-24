@@ -18,7 +18,7 @@ export class RouteviewComponent implements AfterViewInit {
   
   mapOptions: google.maps.MapOptions = {
     center: this.coordinates,
-    zoom: 8
+    zoom: 15
   }
 
   marker = new google.maps.Marker({
