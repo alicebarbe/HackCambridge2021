@@ -112,7 +112,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  ```
  
- ![training your model](./img/image.png)
+ ![training your model](./img/training.png)
 
  ## Evaluation
 
