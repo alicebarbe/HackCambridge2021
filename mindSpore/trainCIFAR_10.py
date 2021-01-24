@@ -104,9 +104,9 @@ if __name__ == "__main__":
         load_param_into_net(net, param_dict)
     #define the optimizer
     opt = nn.Momentum(filter(lambda x: x.requires_grad, net.get_parameters()), 0.01, 0.9)
-    batch_num = 128
+    batch_num = 5
     # CheckPoint CallBack definition
-    config_ck = CheckpointConfig(save_checkpoint_steps=batch_num, keep_checkpoint_max=35)
+    config_ck = CheckpointConfig(save_checkpoint_steps=batch_num, keep_checkpoint_max=10)
     ckpoint_cb = ModelCheckpoint(prefix="train_resnet_cifar10", directory="./", config=config_ck)
 
     train_epoch = 90
