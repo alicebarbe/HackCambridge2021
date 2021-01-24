@@ -125,15 +125,15 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  During the hackathon we have trained the model up to 2 epoch without starting from a checkpoint and the accuracy was ~ 0%
  
- ============= Accuracy:{'Accuracy':  } ==============
+ ============= Accuracy:{'Accuracy': 78% } ==============
  
 For the result at submission tim 5pm please look at the resultfolder.
  
- ![Accuracy](   ) 
+ ![Accuracy](https://github.com/alicebarbe/HackCambridge2021/blob/main/mindSpore/img/accuracy.png) 
  
  # Checkpoint
  
- ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/trainingpng)
+ ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/training.png)
  
  A list of checkpoints can be found below:
  
