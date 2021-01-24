@@ -1,15 +1,15 @@
 # ResNet50
 This folder contains the a ResNet model used for CIFAR-10 Image Classification.
 
- # Usage
+ ## Usage
 
- ## Training
+ ### Training
 
  ```
  python evalCIFAR10.py --device_target=CPU
  ```
 
- ## Evaluation
+ ### Evaluation
 
  ```
  python trainCIFAR10.py --device_target=CPU
