@@ -35,7 +35,7 @@ now you may follow the instruction to activate your virtual environment.
 
 ### Install MindSpore
 
-To install MindSpore, follow the installation guide here(https://www.mindspore.cn/install/en). Select your machine specifications to obtain the correct command. 
+To install MindSpore, follow the installation guide [here](https://www.mindspore.cn/install/en). Select your machine specifications to obtain the correct command. 
  
  # Usage
 
