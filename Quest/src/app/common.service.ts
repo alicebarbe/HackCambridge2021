@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +7,9 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   private baseUrl = 'http://localhost:5000/';
-  //private params = new HttpParams();
+  public lat: number = 0;
+  public lon: number = 0;
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,5 +20,21 @@ export class CommonService {
         res => console.log(res),
         err => console.log(err)
       )
+  }
+
+  public setLat(lat: number) {
+    this.lat = lat;
+  }
+
+  public setLon(lon: number) {
+    this.lon = lon;
+  }
+
+  public getLat() {
+    return this.lat;
+  }
+
+  public getLon() {
+    return this.lon;
   }
 }

@@ -29,7 +29,7 @@
                 <p style="font-weight: bold; color: brown; padding-top: 5px;">Invalid data submitted</p>
               </div>
               <div style="padding-top: 20px;">
-                <button style="color: white; font-size: larger;" class="btn-main" type="submit">Plan my itinerary</button>
+                <a routerLink="/routeview"><button [disabled]="!form.valid" style="color: white; font-size: larger;" class="btn-main" type="submit">Plan my itinerary</button></a>
               </div>
             </form>
           </div>

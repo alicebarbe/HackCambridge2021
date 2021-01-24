@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
       radius: ['', [
         Validators.required,
         Validators.min(minRadius),
-        Validators.max(maxRadius)
+        Validators.max(maxRadius),
+        Validators.pattern('^[0-9]+$')
       ]]
     })
   }
@@ -41,13 +42,12 @@ export class HomeComponent implements OnInit {
     postcodes
       .lookupPostcode(this.controls.location.value, {})
       .then((data: any) => {
+        this.service.setLat(data.latitude);
+        this.service.setLon(data.longitude);
         this.service.getPlants(data.latitude, data.longitude, this.controls.radius.value);
       });
 
     this.form.markAllAsTouched();
-
-    //console.log(this.form.controls['location'].value);
-    //console.log(this.form.controls['radius'].value);
   }
 
   get controls() {
