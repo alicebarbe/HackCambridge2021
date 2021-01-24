@@ -119,3 +119,10 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  ```
  python evalCIFAR_10.py --device_target=CPU  --checkpoint_path=[CHECKPOINT_PATH]
  ```
+ 
+ # Checkpoint
+ 
+ A list of checkpoints can be found below:
+ 
+ 
+ [MindSpore_ResNet50_cifar10_1254](https://www.dropbox.com/s/r9uslw1qsxyz3na/train_resnet_cifar10-2_1254.ckpt?dl=0)
