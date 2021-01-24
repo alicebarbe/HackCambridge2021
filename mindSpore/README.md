@@ -146,4 +146,4 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  # Note
  
- We initialy chose `batch_num=128` and `keep_checkpoint_max=38` we suggest to use the configuration suggested on the documentation (i.e. `batch_num=5` and `keep_checkpoint_max=10`)
+ We initialy chose `batch_num=128` and `keep_checkpoint_max=38` and then used more suitable parameters. We suggest to use the configuration mentioned in the documentation (i.e. `batch_num=5` and `keep_checkpoint_max=10`)
