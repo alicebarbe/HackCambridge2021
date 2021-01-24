@@ -13,19 +13,18 @@ import pandas as pd
 import re
 import time
 import datetime
+import random
 
 start_time = time.time()
 
-url = r"https://records.nbnatlas.org/occurrences/search?q=*:*&fq=(geospatial_kosher:true%20AND%20-occurrence_status:absent)&pageSize=100&lat=52.210083&lon=0.1238049&radius=1"
-url_base = r"https://records.nbnatlas.org"
-lat = 52.210083
-lon = 0.1238049
-radius = 1.0
-pageSize = 10
-kingdom = "Plantae"
+lat = 51.466767
+lon = -0.070416
+radius = 2.0
+num_select = 10
 month = f"{datetime.datetime.now().month:02d}"
 
-url = f"https://records.nbnatlas.org/occurrences/search?q=*%3A*&fq=(geospatial_kosher%3Atrue%20AND%20-occurrence_status%3Aabsent)&fq=kingdom%3A\"{kingdom}\"&lat={lat}&lon={lon}&radius={radius}&fq=month%3A\"{month}\""
+url_base = r"https://records.nbnatlas.org"
+url = f"https://records.nbnatlas.org/occurrences/search?q=*%3A*&fq=(geospatial_kosher%3Atrue%20AND%20-occurrence_status%3Aabsent)&fq=(species_group%3A\"FloweringPlants\"%20OR%20species_group%3A\"Plants\")&lat={lat}&lon={lon}&radius={radius}&fq=month%3A\"{month}\"&max=100"
 response = requests.get(url)
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
@@ -34,19 +33,24 @@ soup = BeautifulSoup(html, 'html.parser')
 raw_results = soup.findAll(lambda tag: tag.name == 'a' and 
                                   tag.get('class') == ['occurrenceLink'],
                            href=True)
-results = [a['href'] for a in raw_results]
+all_results = [a['href'] for a in raw_results]
+results = random.sample(all_results, min(num_select, len(all_results)))
 
-print(f"{len(results)} plants found!")
+print(f"{len(all_results)} plants found, {len(results)} selected!")
 print("--- %s seconds ---" % (time.time() - start_time))
 
 plant_df = pd.DataFrame(columns=['species', 'commonName', 'lat', 'long', 'loc_remarks'])
 
 plantNum = 0
 for plant in results:
-    print(f"processing plant {plantNum} of {pageSize}")
+    print(f"processing plant {plantNum} of {len(results)}")
     plant_soup = BeautifulSoup(requests.get(url_base + plant).text,'html.parser')
     # get various attributes on each plant datum
-    species = plant_soup.find(id='species').find(class_='value').text.strip()
+    try:
+        species = plant_soup.find(id='species').find(class_='value').text.strip()
+    except:  # if the plant doesn't have a species, what even is the point?
+        print("skipped a species-less plant")
+        continue
     try:
         commonName = plant_soup.find(id='commonname').find(class_='value').text.strip()
     except:
