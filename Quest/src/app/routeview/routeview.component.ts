@@ -41,10 +41,11 @@ export class RouteviewComponent implements AfterViewInit {
       let lat = parseInt(splitCoords[0]);
       let lon = parseInt(splitCoords[1]);
       let coordinates = new google.maps.LatLng(lat, lon)
-      new google.maps.Marker({
+      let newPlant = new google.maps.Marker({
         position: (coordinates),
         map: this.map
-      }).setMap(this.map)
+      });
+      newPlant.setMap(this.map);
     })
 
   }
