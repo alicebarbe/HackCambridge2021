@@ -5,7 +5,7 @@ This folder contains a ResNet model for Image Classification using CIFAR-10 data
 
 ## Requirments
 
-In order to use MindSpore window operating system is required. Python 3.7.5 must be installed, you can find how to do so here (). For this project we have created a citual environment local to this repository.
+In order to use MindSpore, Windows-x64 is required. Python 3.7.5 must be installed, you can find how to do so here (). For this project we have created a citual environment local to this repository.
 
 ### Create a Virtual Env  for Python 3.7 with virtualenv
 
