@@ -44,7 +44,7 @@ export class RouteviewComponent implements AfterViewInit {
       new google.maps.Marker({
         position: (coordinates),
         map: this.map
-      })
+      }).setMap(this.map)
     })
 
   }
