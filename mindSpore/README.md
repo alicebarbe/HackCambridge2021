@@ -122,7 +122,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  # Checkpoint
  
- ![epoch2.png](mindSpore/img/epoch2image.png)
+ ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/epoch2image.png)
  
  A list of checkpoints can be found below:
  
