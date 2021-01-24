@@ -40,15 +40,15 @@ To install MindSpore, follow the installation guide here(https://www.mindspore.c
  # Usage
 
  ## Training
-
- ```
- python evalCIFAR10.py --device_target=CPU   
- ```
-
- ## Evaluation
-
+ 
+ 
  ```
  python trainCIFAR10.py --device_target=CPU
  ```
 
+ ## Evaluation
 
+
+ ```
+ python evalCIFAR10.py --device_target=CPU   
+ ```
