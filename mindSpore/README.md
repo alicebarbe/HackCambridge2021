@@ -123,7 +123,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  
  ## Accuracy 24/01/2021 morning
  
- During the hackathon we have trained the model up to 2 epoch without starting from a checkpoint and the accuracy was ~ 0%
+ During the hackathon we have trained the model up to 2 epoch without starting from a checkpoint and the accuracy was ~ 50% (fixed typo)
  
  ============= Accuracy:{'Accuracy': 78% } ==============
  
