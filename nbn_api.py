@@ -16,7 +16,9 @@ import concurrent.futures
 import wikipedia
 
 from flask import Flask, request, render_template, session, redirect
+from flask_cors import CORS
 app = Flask(__name__)
+cors = CORS(app, recources={r"/api/*": {"origins": "*"}})
 
 start_time = time.time()
 
