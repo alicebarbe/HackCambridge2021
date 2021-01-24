@@ -28,7 +28,7 @@ If you are using linux  simply use the command:
 ```
 wget https://www.cs.toronto.edu/~kriz/cifar-10-binary.tar.gz
 ```
-![command](./mindSpore/img/unzip.png)
+![command](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/unzip.png)
 and 
 
 
