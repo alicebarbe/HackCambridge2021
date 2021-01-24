@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 
+const PostcodesIO = require('postcodesio-client');
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -34,9 +36,18 @@ export class HomeComponent implements OnInit {
   }
 
   public submit(f: FormGroup) {
+
+    const postcodes = new PostcodesIO('https://api.postcodes.io');
+    postcodes
+      .lookupPostcode(this.controls.location.value, {})
+      .then((data: any) => {
+        this.service.getPlants(data.latitude, data.longitude, this.controls.radius.value);
+      });
+
     this.form.markAllAsTouched();
-    console.log(this.form.controls['location'].value);
-    console.log(this.form.controls['radius'].value);
+
+    //console.log(this.form.controls['location'].value);
+    //console.log(this.form.controls['radius'].value);
   }
 
   get controls() {
