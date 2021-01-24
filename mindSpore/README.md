@@ -120,6 +120,10 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  python evalCIFAR_10.py --device_target=CPU  --checkpoint_path=[CHECKPOINT_PATH]
  ```
  
+ ## Accuracy
+ 
+ ![Accuracy]() 
+ 
  # Checkpoint
  
  ![epoch2.png](https://github.com/alicebarbe/HackCambridge2021/blob/cifar-10/mindSpore/img/epoch2image.png)
@@ -132,6 +136,7 @@ To install MindSpore, follow the installation guide [here](https://www.mindspore
  - [train_resnet50_cifar10_2-1_80.ckpt](https://www.dropbox.com/s/w82pnvzwafehmra/train_resnet_cifar10_2-1_80.ckpt?dl=0)
  
  other checkpoints can be found [here](https://www.dropbox.com/sh/8e18q8akyr2mftv/AAB5YfS4HK3qGkRAcefJSoZUa?dl=0)
+ 
  
  
  # Note
