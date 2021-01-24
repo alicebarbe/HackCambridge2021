@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
       });
 
     this.form.markAllAsTouched();
+    setTimeout(() => this.goToRouteView(), 60000);
   }
 
   get controls() {
