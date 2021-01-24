@@ -1,3 +1,6 @@
+#==============================================================================================
+# This is the Huawei Challenge from The University of Cambridge Hackathon (HexCambridge 2021) 
+# ============================================================================
 import os
 import argparse
 from mindspore import context
