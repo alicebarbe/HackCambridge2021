@@ -90,19 +90,18 @@ if __name__ == "__main__":
     args = parser.parse_args()
     context.set_context(mode=context.GRAPH_MODE, device_target=args.device_target)
     dataset_sink_mode = not args.device_target == "CPU"
-    # download mnist dataset
+    # download cifar-10 dataset
     #download_dataset()
-    if args.pre_trained:
-        param_dict = load_checkpoint(args.pre_trained)
-        load_param_into_net(net, param_dict)
-# loss function definition
+
+    # loss function definition
     loss = SoftmaxCrossEntropyWithLogits(sparse=True, reduction="mean")
 
-    #learning rate setting
-    #lr = 0.01
     momentum = 0.9
     #create the network
     net = resnet(class_num=10)
+    if args.pre_trained:
+        param_dict = load_checkpoint(args.pre_trained)
+        load_param_into_net(net, param_dict)
     #define the optimizer
     opt = nn.Momentum(filter(lambda x: x.requires_grad, net.get_parameters()), 0.01, 0.9)
     batch_num = 128
